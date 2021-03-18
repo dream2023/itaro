@@ -84,6 +84,12 @@ export default itaro({
 })
 ```
 
+## 自定义编译模式
+
+如果你使用了本工具，强烈建议配合小程序开发工具的 [自定义编译模式](https://blog.csdn.net/hongxue8888/article/details/104614445)，一步到自定义页面。
+
+![itaro](./demo2.png)
+
 ## 特别说明
 
 - `subpackages` 页面，如果选择了 `root` 页面，则会自动选择全部子页面；
