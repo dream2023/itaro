@@ -86,10 +86,13 @@ export function getAnswerAppConfig(
 
   // 更新子包信息信息
   const subpackages = getAnswerSubPackages(answerPages)
+
+  // 删除原主包信息
+  delete originAppConfig.subpackages
+  delete originAppConfig.subPackages
+
   if (subpackages.length) {
     originAppConfig.subpackages = subpackages
-  } else {
-    delete originAppConfig.subpackages
   }
 
   return originAppConfig

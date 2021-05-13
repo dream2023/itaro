@@ -10,7 +10,12 @@ import {
   processAnswers,
   getPagesSource,
 } from "./answer"
+import { checkArgs, checkSetting } from './util'
 const shelljs = require("shelljs")
+
+// 检查命令
+checkArgs()
+checkSetting()
 
 // 注册插件
 inquirer.registerPrompt(
@@ -45,11 +50,6 @@ inquirer
   ])
   .then(function (answers) {
     processAnswers(appConfig, answers)
-
     const args = process.argv.slice(2)
-    if (args.length) {
-      shelljs.exec(args.join(" "))
-    } else {
-      console.warn("请在 itaro 后面加上启动命令")
-    }
+    shelljs.exec(args.join(" "))
   })
